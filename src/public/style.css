@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #3174b9;
+    --color-secundary: #215488;
+    --color-from: #ade6f9;
+    --color-to: #f1f1f1;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+#container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+#box-users {
+    width: 250px;
+    height: 100%;
+    background-color: #f1f1f1;
+    padding: 10px 15px;
+    overflow-y: auto;
+}
+
+#box-conversation {
+    flex: 1;
+    background-color: white;
+    box-shadow: -1px -1px 10px 1px lightgray;
+}
+
+#fixed-box-messages {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#box-messages {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    padding: 30px 5%;
+    overflow-y: auto;
+}
+
+form {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    border-top: 1px solid lightgray;
+}
+
+form input[type=text] {
+    flex: 1;
+    height: 100%;
+    padding: 0 0 0 20px;
+    border: none;
+    outline: none;
+}
+
+form button[type=submit] {
+    padding: 10px 20px;
+    height: 100%;
+    border: none;
+    background-color: var(--color-primary);
+    color: white;
+    border-bottom: 3px solid var(--color-secundary);
+    cursor: pointer;
+    font-size: 15pt;
+}
+
+.btn-users-online {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 0 0 0 20px;
+    background-color: white;
+    border: 1px solid #e4e4e4;
+    transition: .2s;
+
+}
+
+.item-selected {
+    border: 1px solid var(--color-primary);
+    border-left: 5px solid var(--color-primary);
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.box-item-message {
+    width: 100%;
+    margin-bottom: 2px;
+    display: flex;
+}
+
+.item-message {
+    max-width: 60%;
+    height: auto;
+    border-radius: 5px;
+    padding: 15px 25px;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.from {
+    background-color: var(--color-from);
+    text-align: right;
+}
+
+.from:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 5px solid transparent;
+    border-left: 5px solid var(--color-from);
+    border-bottom: 5px solid transparent;
+    right: -5px;
+    top: 10px;
+}
+
+.to {
+    background-color: var(--color-to);
+}
+
+.to:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 5px solid transparent;
+    border-right: 5px solid var(--color-to);
+    border-bottom: 5px solid transparent;
+    left: -5px;
+    top: 10px;
+}
+
+.box-to {
+    justify-content: flex-start;
+}
+
+.box-from {
+    justify-content: flex-end;
+}
+
+.datetime {
+    display: block;
+    color: gray;
+    font-size: 7pt;
+    font-style: italic;
+    margin-top: 10px;
+}
